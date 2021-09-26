@@ -262,6 +262,7 @@ form input{
     width: 25%;
     border-bottom: 1px solid gray;
     margin: 15px;
+    padding: 12px;
 }
 form button{
     margin-top: 30px;
@@ -424,5 +425,15 @@ form button{
         width: 100%;
         font-size: 15px;
         padding: 15px;
+    }
+    form{
+        margin-top: 20px;
+    }
+    form input{
+        width: 80%;
+    }
+    form button{
+        width: 50%;
+        padding: 12px;
     }
 }

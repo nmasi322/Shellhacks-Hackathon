@@ -27,9 +27,9 @@
     <section>
         <div class="content">
             <div class="column">
-                <h1>Register for a new account!</h1>
+                <h1 style="margin-top: 70px;">Register for a new account!</h1>
             </div>
-            <form onsubmit="register()">
+            <form onsubmit="register(event)">
                 <input type="text" id="name" placeholder="Type in your fullname.....">
                 <input type="email" id="email" placeholder="Type in your email....">
                 <input type="password" id="password" placeholder="Enter a password.....">
@@ -52,13 +52,14 @@
 <script src="index.js"></script>
 <script text="javascript">
 
-function register(){
+function register(event){
+    event.preventDefault()
     let name = document.getElementById("name").value
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
-    if (name == "" || name == undefined || email == "" || email == undefined || ! password)
-        document.getElementById("error").innerText = "All fields are required";
-        return
+    if (name == "" || name == undefined || email == "" || email == undefined )
+       {return document.getElementById("error").innerText = "All fields are required";
+        }
 
     console.log(name, email, password);
 

@@ -27,7 +27,7 @@
     <section>
         <div class="content">
             <div class="column">
-                <h1>Register for a new account!</h1>
+                <h1 style="margin-top: 70px;">Login to your account!</h1>
             </div>
             <form onsubmit="login()">
                 <input type="email" id="email-login" placeholder="Type in your email....">
@@ -37,10 +37,6 @@
             <h2 id="error"></h2>
         </div>
     </section>
-<br><br><br><br><br><br>
-
-
-
 
     <!-- footer section  -->
     <footer>
@@ -50,34 +46,18 @@
 </body>
 <script src="index.js"></script>
 <script text="javascript">
-    let name = document.getElementById("name").value
-    let email = document.getElementById("email").value
-    let password = document.getElementById("password").value
-
-    function register(){
-        if (name == "" || name == undefined || email == "" || email == undefined || ! password)
-            document.getElementById("error").innerText = "All fields are required";
-            return
-
-
-        console.log(name, email, password);
-
-        let userObject = {name, email, password};
-        localStorage.setItem("register", JSON.stringify(userObject));
-        document.getElementById("error", "Your registration was successful, proceed to login");
-        return
-    }
-
+    
 function login(){
     const emailLogin = document.getElementById("email-login").value
     const passwordLogin = document.getElementById("password-login").value
+    let userData = JSON.parse(localStorage.getItem("register"));
 
-    if (emailLogin ===  email && passwordLogin === password){
-        document.getElementById("error", "Login successful!");
-        return
+    if (emailLogin ==  userData.email && passwordLogin == userData.password){
+        document.getElementById("error").innerText = "Successful Login";
+        return window.location="dashboard.html";
     }
     else{
-        document.getElementById("error", "Email or password incorrect!");
+        document.getElementById("error").innerText = "Incorrect Email or Password";
     }
 }
 </script>
