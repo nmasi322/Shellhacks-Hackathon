@@ -35,7 +35,7 @@
                 <input type="password" id="password" placeholder="Enter a password.....">
                 <button type="submit">Submit</button>
             </form>
-            <h2 id="error"></h2>
+            <h2 id="error" style="margin-top: 30px; text-transform: capitalize;"></h2>
         </div>
     </section>
 <br><br><br><br><br><br>
@@ -65,7 +65,8 @@ function register(event){
 
     let userObject = {name, email, password};
     localStorage.setItem("register", JSON.stringify(userObject));
-    document.getElementById("error", "Your registration was successful, proceed to login");
+    document.getElementById("error").innerText = "Your registration was successful, proceed to login";
+    // document.getElementById("error", "Your registration was successful, proceed to login");
     return
 }
 

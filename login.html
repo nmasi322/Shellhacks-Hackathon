@@ -54,7 +54,8 @@ function login(){
 
     if (emailLogin ==  userData.email && passwordLogin == userData.password){
         document.getElementById("error").innerText = "Successful Login";
-        return window.location="dashboard.html";
+        window.location.href="dashboard.html";
+        // return
     }
     else{
         document.getElementById("error").innerText = "Incorrect Email or Password";
