@@ -51,7 +51,10 @@ function login(){
     const emailLogin = document.getElementById("email-login").value
     const passwordLogin = document.getElementById("password-login").value
     let userData = JSON.parse(localStorage.getItem("register"));
-
+    
+    if (emailLogin && passwordLogin != userData.email && userData.password){
+        document.getElementById("error").innerText = "Error, the email and password does not exist!";
+    }
     if (emailLogin ==  userData.email && passwordLogin == userData.password){
         document.getElementById("error").innerText = "Successful Login";
         window.location.href="dashboard.html";

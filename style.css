@@ -186,6 +186,10 @@ header.sticky{
     font-weight: 500;
     line-height: 1.5;
 }
+#error{
+    display: block;
+    margin-top: 20px;
+}
 .about-description {
     width: 55%;
     float: right;
