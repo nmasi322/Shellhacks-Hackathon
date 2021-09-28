@@ -29,12 +29,12 @@
             <div class="column">
                 <h1 style="margin-top: 70px;">Login to your account!</h1>
             </div>
-            <form onsubmit="login()">
+            <h2 id="error"></h2>
+            <form onsubmit="login(event)">
                 <input type="email" id="email-login" placeholder="Type in your email....">
                 <input type="password" id="password-login" placeholder="Enter a password.....">
                 <button type="submit">Submit</button>
             </form>
-            <h2 id="error"></h2>
         </div>
     </section>
 
@@ -47,7 +47,8 @@
 <script src="index.js"></script>
 <script text="javascript">
     
-function login(){
+function login(event){
+    event.preventDefault()
     const emailLogin = document.getElementById("email-login").value
     const passwordLogin = document.getElementById("password-login").value
     let userData = JSON.parse(localStorage.getItem("register"));
